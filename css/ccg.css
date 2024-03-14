@@ -1,0 +1,246 @@
+:root {
+    --generator-primary-color: #007bff;
+    --generator-secondary-color: #6c757d;
+    --generator-light-color: #c0d1df;
+    --generator-font-family: 'Source Sans Pro', sans-serif;
+    --input-height: 38px;
+    --input-padding: 6px 12px;
+    --input-font-size: 0.9rem;
+    --input-label-font-size: 0.7rem;
+    --input-line-height: 1.5;
+    --input-border-radius: 0.25rem;
+    --input-border: 1px solid #ced4da;
+    --input-focus-border-color: #80bdff;
+    --input-focus-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    --checkbox-size: 20px;
+    --codes-output-color: #F1F5F8;
+    --codes-element-color: #fefefe;
+}
+
+.ccg {
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.ccg-coupon-generator {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.ccg-coupon-form {
+    display: flex;    
+    flex-wrap: wrap; /* Allow wrapping as needed */
+    width: 100%;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.ccg-coupon-form input[type="text"] {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: calc(33.333% - 40px);
+    min-width: 10px;
+}
+
+.ccg-coupon-form button {
+    width: auto;
+    padding: 10px 90px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-left: 10px;
+}
+
+.ccg-codes-output {
+    margin-top: 30px;
+}
+
+.ccg-codes-output .codes-area {
+    background-color: var(--codes-output-color);
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.ccg-form-group label {
+    display: block;
+    color: var(--generator-secondary-color);
+    font-size: var(--input-label-font-size);
+    margin-bottom: 4px;
+}
+
+.ccg-form-group input[type="number"],
+.ccg-form-group input[type="text"],
+.ccg-form-group select,
+.ccg-generate-btn {
+    display: block;
+    width: 100%;
+    padding: var(--input-padding);
+    font-size: var(--input-font-size);
+    line-height: var(--input-line-height);
+    color: var(--generator-secondary-color);
+    background-color: #fff;
+    background-clip: padding-box;
+    border: var(--input-border);
+    border-radius: var(--input-border-radius);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    box-sizing: border-box;
+    height: var(--input-height);
+}
+
+.ccg-form-group input[type="number"]:focus,
+.ccg-form-group input[type="text"]:focus,
+.ccg-form-group select:focus,
+.ccg-generate-btn:focus {
+    border-color: var(--input-focus-border-color);
+    outline: 0;
+    box-shadow: var(--input-focus-box-shadow);
+}
+
+.ccg-form-group.checkbox-group {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: var(--input-label-font-size);
+}
+
+.ccg-form-group.checkbox-group input[type="checkbox"] {
+    cursor: pointer;
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
+    margin: 0 5px;
+}
+
+.ccg-form-group.checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.ccg-form-group {
+    flex: 1;
+    max-width: calc(100% / 4 - 10px); 
+}
+
+.ccg-generate-btn {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--generator-primary-color);
+    color: #fff;
+    font-weight: 500;
+    border: none; 
+    transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1); 
+}
+
+.ccg-generate-btn:hover {
+    filter: brightness(90%); 
+}
+
+@media (max-width: 768px) {
+    .ccg-coupon-form {
+        flex-direction: column;
+    }
+
+    .ccg-form-group {
+        max-width: 100%;
+    }
+
+    .ccg-coupon-form .ccg-form-group,
+    .ccg-coupon-form button {
+        width: 100%;
+        flex-basis: auto;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .ccg-coupon-form .ccg-form-group input[type="number"],
+    .ccg-coupon-form .ccg-form-group input[type="text"],
+    .ccg-coupon-form .ccg-form-group select {
+        width: 100%;
+    }
+}
+.codes-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed var(--generator-light-color);
+    padding: 20px;
+    margin: 10px 0;
+    background-color: var(--codes-output-color);
+    min-height: 300px;
+}
+
+.code-element {
+    padding: 5px 10px;
+    margin: 5px;
+    background: var(--codes-element-color);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 5px;
+}
+
+/* .icon-placeholder {
+    width: 50px; 
+    height: 50px; 
+    margin-bottom: 20px; 
+    background-image: url('path-to-your-icon.png'); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+} */
+
+.inner-rectangle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--codes-element-color); 
+    width: 30%; 
+    height: 100px; 
+    text-align: center;
+    color: var(--generator-secondary-color);
+    border-radius: 5px; 
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}
+
+.output-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 10px;
+}
+
+.output-header .buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.output-header span {
+    font-size: 1.2rem;
+}
+
+.ccg-btn {
+    background-color: #fff; /* White background */
+    color: #333; /* Dark text */
+    border: 1px solid #ced4da; /* Grey border */
+    padding: 6px 12px;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ccg-btn:hover {
+    background-color: #e6e6e6; 
+    border-color: #bbb; 
+}
